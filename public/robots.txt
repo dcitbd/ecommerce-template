@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /customer/
+Disallow: /checkout/
+
+Sitemap: https://technoworldbangladesh.com/sitemap.xml
