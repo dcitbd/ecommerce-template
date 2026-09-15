@@ -1,0 +1,3 @@
+import React from 'react';
+import { LoginPage } from '../../pages/auth/LoginPage';
+export const LoginForm: React.FC = () => <LoginPage />;
