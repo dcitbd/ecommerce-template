@@ -12,13 +12,11 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # ১. বিল্ড জব (TypeScript/Vite কম্পাইল করে dist তৈরি করবে)
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -37,14 +35,19 @@ jobs:
           npm run build
           cp dist/index.html dist/404.html
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload GitHub Pages Artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: ./dist
 
+  # ২. ডিপ্লয় জব (তৈরিকৃত dist ফোল্ডারটি গিটহাব পেজে লাইভ করবে)
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
