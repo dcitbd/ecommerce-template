@@ -16,7 +16,7 @@ export const App: React.FC = () => {
           <NotificationProvider>
             <CartProvider>
               <WishlistProvider>
-                <BrowserRouter>
+                <BrowserRouter basename={import.meta.env.BASE_URL}>
                   <AppRoutes />
                 </BrowserRouter>
               </WishlistProvider>
