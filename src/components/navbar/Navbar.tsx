@@ -21,9 +21,9 @@ export const Navbar: React.FC<{ products: Product[] }> = ({ products }) => {
     <header className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
       <TopAnnouncementBar />
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        {/* Brand Logo */}
+        {/* Brand Logo - logo.png */}
         <Link to="/" className="flex items-center space-x-2 shrink-0">
-          <img src="/logo.svg" alt="Techno World BD" className="h-10 w-auto" />
+          <img src="./logo.png" alt="Techno World BD" className="h-10 w-auto object-contain rounded-lg" />
         </Link>
 
         {/* Live Search Bar with Instant Preview */}
