@@ -1,13 +1,14 @@
 {
   "name": "Techno World BD",
   "short_name": "TechnoWorld",
-  "start_url": "/",
+  "start_url": "/ecommerce-template/",
+  "scope": "/ecommerce-template/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#10b981",
   "icons": [
     {
-      "src": "/logo.svg",
+      "src": "logo.svg",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml"
     }
