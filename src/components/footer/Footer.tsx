@@ -7,9 +7,9 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-12 pb-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        {/* Brand Col */}
+        {/* Brand Col - logo.png */}
         <div className="space-y-4">
-          <img src="/logo.svg" alt="Techno World BD" className="h-10 w-auto" />
+          <img src="./logo.png" alt="Techno World BD" className="h-12 w-auto object-contain rounded-lg" />
           <p className="text-xs text-slate-400 leading-relaxed">
             {siteConfig.description}
           </p>
