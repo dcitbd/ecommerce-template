@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ১. বিল্ড জব (TypeScript/Vite কম্পাইল করে dist তৈরি করবে)
   build:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +39,6 @@ jobs:
         with:
           path: ./dist
 
-  # ২. ডিপ্লয় জব (তৈরিকৃত dist ফোল্ডারটি গিটহাব পেজে লাইভ করবে)
   deploy:
     environment:
       name: github-pages
